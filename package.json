@@ -1,6 +1,8 @@
 {
   "devDependencies": {
-    "@biomejs/biome": "1.2.2"
+    "@biomejs/biome": "1.2.2",
+    "@types/node": "18.17.1",
+    "jest-worker": "^29.7.0"
   },
   "dependencies": {
     "glob": "^10.3.10",
