@@ -1,4 +1,3 @@
-import fs from "node:fs";
 import { join } from "node:path";
 import { cpus } from "node:os";
 import { dirname } from "node:path";
