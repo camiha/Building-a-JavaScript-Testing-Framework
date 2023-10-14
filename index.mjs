@@ -41,7 +41,7 @@ const main = async () => {
 
 			console.log(`${status} ${chalk.dim(relative(root, testFile))}`);
 			if (!success) {
-				console.log(`test failed: ${errorMessage}`);
+				console.log(errorMessage);
 			}
 		}),
 	);

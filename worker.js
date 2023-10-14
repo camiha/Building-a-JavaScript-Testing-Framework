@@ -28,7 +28,7 @@ exports.runTest = async function (testFile) {
 		}
 		testResult.success = true;
 	} catch (error) {
-		testResult.errorMessage = error.message;
+		testResult.errorMessage = `${testName}: ${error.message}`;
 	}
 	return testResult;
 };
