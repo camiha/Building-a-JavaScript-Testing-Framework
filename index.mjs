@@ -27,7 +27,9 @@ const main = async () => {
 	await hasteMap.setupCachePath(hasteMapOptions);
 
 	const { hasteFS } = await hasteMap.build();
-	const testFiles = hasteFS.matchFilesWithGlob(["**/*.test.js"], root);
+	const testFiles = hasteFS.matchFilesWithGlob([
+		process.argv[2] ? `**/${process.argv[2]}*` : "**/*.test.js",
+	]);
 
 	await Promise.all(
 		Array.from(testFiles).map(async (testFile) => {
