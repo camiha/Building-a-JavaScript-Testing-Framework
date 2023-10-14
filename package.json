@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "@biomejs/biome": "1.2.2"
+  },
+  "dependencies": {
+    "glob": "^10.3.10",
+    "jest-haste-map": "^29.7.0"
+  }
+}
