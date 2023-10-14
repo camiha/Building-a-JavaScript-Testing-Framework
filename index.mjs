@@ -31,6 +31,7 @@ const main = async () => {
 		process.argv[2] ? `**/${process.argv[2]}*` : "**/*.test.js",
 	]);
 
+	let hasFailed = false;
 	await Promise.all(
 		Array.from(testFiles).map(async (testFile) => {
 			const { success, errorMessage } = await worker.runTest(testFile);
@@ -45,6 +46,15 @@ const main = async () => {
 		}),
 	);
 	worker.end();
+	if (hasFailed) {
+		console.log(
+			`\n${chalk.red.bold(
+				"Test run failed, please fix all the failing tests.",
+			)}`,
+		);
+		// Set an exit code to indicate failure.
+		process.exitCode = 1;
+	}
 };
 
 void main();
